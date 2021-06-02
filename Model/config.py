@@ -6,38 +6,38 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--gpu", type=str, help="0",
                     dest="0", default='0')
 parser.add_argument("--atlas_file", type=str, help="0",
-                    dest="atlas_file", default='C:\\Users\\19958595306\\Desktop\\VoxelMorph1\\VoxelMorph-torch-master\LPBA40\\fixed.nii.gz')
+                    dest="atlas_file", default='/content/drive/MyDrive/VOX/Checkpoint/fixed.nii.gz')
 parser.add_argument("--model", type=str, help="voxelmorph 1 or 2",
                     dest="model", choices=['vm1', 'vm2'], default='vm2')
 parser.add_argument("--result_dir", type=str, help="results folder",
-                    dest="result_dir", default='C:\\Users\\19958595306\\Desktop\\VoxelMorph1\\VoxelMorph-torch-master\\Result')
+                    dest="result_dir", default='/content/drive/MyDrive/VOX/result')
 
 # train时参数
 parser.add_argument("--train_dir", type=str, help="data folder with training vols",
-                    dest="train_dir", default="C:\\Users\\19958595306\\Desktop\\VoxelMorph1\\VoxelMorph-torch-master\\LPBA40\\train")
+                    dest="train_dir", default="/content/drive/MyDrive/VOX/train")
 parser.add_argument("--lr", type=float, help="learning rate",
                     dest="lr", default=4e-4)
 parser.add_argument("--n_iter", type=int, help="number of iterations",
-                    dest="n_iter", default=1)
+                    dest="n_iter", default=50)
 parser.add_argument("--sim_loss", type=str, help="image similarity loss: mse or ncc",
                     dest="sim_loss", default='ncc')
 parser.add_argument("--alpha", type=float, help="regularization parameter",
                     dest="alpha", default=4.0)  # recommend 1.0 for ncc, 0.01 for mse
 parser.add_argument("--batch_size", type=int, help="batch_size",
-                    dest="batch_size", default=1)
+                    dest="batch_size", default=2)
 parser.add_argument("--n_save_iter", type=int, help="frequency of model saves",
                     dest="n_save_iter", default=1)
 parser.add_argument("--model_dir", type=str, help="models folder",
-                    dest="model_dir", default='C:\\Users\\19958595306\\Desktop\\VoxelMorph1\\VoxelMorph-torch-master\\Checkpoint')
+                    dest="model_dir", default='/content/drive/MyDrive/VOX/Checkpoint')
 parser.add_argument("--log_dir", type=str, help="logs folder",
-                    dest="log_dir", default='C:\\Users\\19958595306\\Desktop\\VoxelMorph1\\VoxelMorph-torch-master\\Log')
+                    dest="log_dir", default='/content/drive/MyDrive/VOX/log')
 
 # test时参数
 parser.add_argument("--test_dir", type=str, help="test data directory",
-                    dest="test_dir", default='C:\\Users\\19958595306\\Desktop\\VoxelMorph1\\VoxelMorph-torch-master\\LPBA40\\test')
+                    dest="test_dir", default='/content/drive/MyDrive/VOX/test')
 parser.add_argument("--label_dir", type=str, help="label data directory",
-                    dest="label_dir", default='C:\\Users\\19958595306\\Desktop\\VoxelMorph1\\VoxelMorph-torch-master\\LPBA40\\label')
+                    dest="label_dir", default='/content/drive/MyDrive/VOX/label')
 parser.add_argument("--checkpoint_path", type=str, help="model weight file",
-                    dest="checkpoint_path", default="C:\\Users\\19958595306\\Desktop\\VoxelMorph1\\VoxelMorph-torch-master\\Checkpoint\\LPBA40.pth")
+                    dest="checkpoint_path", default="/content/drive/MyDrive/VOX/Checkpoint/LPBA40.pth")
 
 args = parser.parse_args()
